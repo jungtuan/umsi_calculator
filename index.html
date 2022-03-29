@@ -117,8 +117,13 @@
                                 </div>
                             </div>
                             <div class="card-footer py-3 d-flex justify-content-between">
-                                <input type="reset" value="Reset"/>
-                                <input type="submit" value="Calculate Footprint"/>
+                                <button type="reset" id="reset-form" class="btn btn-secondary d-flex flex-row align-items-center">
+                                    Reset
+                                </button>
+                                <button type="submit" class="btn btn-success d-flex flex-row align-items-center">Calculate Footprint
+                                    <div class="spinner-border spinner-border-sm text-white ms-2 d-none" role="status" id="spinner"></div>
+                                </button>
+                                <input type="submit" value="Submit to MFF"/>
                             </div>
                         </div>
                     </form>
