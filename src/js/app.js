@@ -59,7 +59,8 @@
         }).then(response => response.json()).then(defaultParameters => {
             
             
-
+            defaultParameters.sqFeet = Number.parseInt(formData.get('sqFeet'));
+            
             defaultParameters.electricity = Number.parseInt(formData.get('electricity'));
 
             defaultParameters.naturalGas = Number.parseInt(formData.get('naturalGas'));
