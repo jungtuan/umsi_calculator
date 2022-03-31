@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/index.bundle.css" />
+
+    <!-- Title -->
+    <title>Cool Climate Calculator</title>
+</head>
+
+<body class="min-h-100 bg-light">
+    <main class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 d-flex justify-content-center">
+                    <img src="assets/images/logo.png" style="height:50px;" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form id="footprint" action="https://formspree.io/f/xknyzlbe" method="POST">
+                        <div class="card h-100 mb-4">
+                            <div class="card-header py-3">
+                                <h5 class="card-title mb-0">Business Details</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="small text-secondary">This calculator estimated the carbon footprint for small businesses in Washtenaw County, Michigan, using the uses the <a class="text-success" href="https://coolclimate.berkeley.edu/calculator">CoolClimate Calculator</a> that's available through UC Berkeley.</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="annual_revenue" class="form-label">Annual Revenue</label>
+                                            <input type="number" class="form-control" id="annual_revenue" name="annual_revenue" aria-describedby="annual_revenue_help" min="0" required>
+                                            <div id="annual_revenue_help" class="form-text fs-sm">Annual business revenue in USD.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="num_employees" class="form-label">Number of employees</label>
+                                            <input type="number" class="form-control" id="num_employees" name="num_employees" aria-describedby="num_employees" min="0" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="num_visitors_per_week" class="form-label">Number of Store Visitors per week</label>
+                                            <input type="number" class="form-control" id="num_visitors_per_week" name="num_visitors_per_week" aria-describedby="num_visitors_per_week_week" min="0" required>
+                                            <div id="num_visitors_per_week_week" class="form-text fs-sm">If your business does not accept visitors, please enter <strong>0</strong>.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="sqFeet" class="form-label">Store Size (ft<sup>2</sup>)</label>
+                                            <input type="number" class="form-control" id="sqFeet" name="sqFeet" aria-describedby="sqFeet_help" min="0" required>
+                                            <div id="sqFeet_help" class="fs-sm form-text">If your business is an online business, please enter <strong>0</strong>.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="electricity" class="form-label">Electricity (kwh per year)</label>
+                                            <input type="number" class="form-control" id="electricity" name="electricity" aria-describedby="electricity_help" min="0" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="naturalGas" class="form-label">Natural Gas (cu.ft per year)</label>
+                                            <input type="number" class="form-control" id="naturalGas" name="naturalGas" aria-describedby="naturalGas_help" min="0" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="otherFuel" class="form-label">Heating Oil or Other Fuels (gallons per year)</label>
+                                            <input type="number" class="form-control" id="otherFuel" name="otherFuel" aria-describedby="otherFuel_help" min="0" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="electronics" class="form-label">Electronics purchased ($ spent per year)</label>
+                                            <input type="number" class="form-control" id="electronics" name="electronics" aria-describedby="electronics_help" min="0" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="solidWaste" class="form-label">Amount of waste (cupid yards per week)</label>
+                                            <input type="number" class="form-control" id="solidWaste" name="solidWaste" aria-describedby="solidWaste_help" min="0" required>
+                                            <div id="solidWaste_help" class="fs-sm form-text">1 cupid yard = 200 gallons.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="recycling" class="form-label">Amount of recycling (cupid yards per week)</label>
+                                            <input type="number" class="form-control" id="recycling" name="recycling" aria-describedby="recycling_help" min="0" required>
+                                            <div id="recycling_help" class="fs-sm form-text">1 cupid yard = 200 gallons.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Company Name</label>
+                                            <input type="text" class="form-control" id="name" name="name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Contact Email</label>
+                                            <input type="email" class="form-control" id="email" name="email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer py-3 d-flex justify-content-between">
+                                <button type="reset" id="reset-form" class="btn btn-secondary d-flex flex-row align-items-center">
+                                    Reset
+                                </button>
+                                <button type="submit" class="btn btn-success d-flex flex-row align-items-center">Calculate Footprint
+                                    <div class="spinner-border spinner-border-sm text-white ms-2 d-none" role="status" id="spinner"></div>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="mt-4">
+                        <p class="small text-secondary" style="max-width:400px">Developed by UMSI capstone team and assistance from <a href="https://greenplaces.com/">Green Places</a>.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card h-100 mb-4">
+                        <img class="card-img-top" src="assets/images/rainforest.jpg" alt="Card image cap">
+                        <div class="card-body p-5">
+                            <div class="d-flex flex-row align-items-center">
+                                <span class="display-3 m-0" id="total-carbon">0</span>
+                                <div class="ms-3">
+                                    <span class="h3 text-secondary">mT CO<sub>2</sub> equivalent</span>
+                                    <br>
+                                    estimated annual footprint
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="bg-secondary my-2" />
+                        <div class="card-body flush px-5">
+                            <table class="table w-100">
+                                <tr>
+                                    <th>Procurement</th>
+                                    <td><span id="procurement-carbon">0</span> mT</td>
+                                </tr>
+                                <tr class='text-secondary ps-4'>
+                                    <th class='ps-4'>Electronics</th>
+                                    <td><span id="electronics-carbon">0</span> mT</td>
+                                </tr>
+                                <tr>
+                                    <th>Facilities</th>
+                                    <td><span id="facilities-carbon">0</span> mT</td>
+                                </tr>
+                                <tr class='text-secondary ps-4'>
+                                    <th class='ps-4'>Electricity</th>
+                                    <td><span id="electricity-carbon">0</span> mT</td>
+                                </tr>
+                                <tr class='text-secondary ps-4'>
+                                    <th class='ps-4'>Natural Gas</th>
+                                    <td><span id="naturalGas-carbon">0</span> mT</td>
+                                </tr>
+                                <tr class='text-secondary ps-4'>
+                                    <th class='ps-4'>Heating Oil or Other Fuels</th>
+                                    <td><span id="otherFuel-carbon">0</span> mT</td>
+                                </tr>
+                                <tr>
+                                    <th>Transportation</th>
+                                    <td><span id="transportation-carbon">0</span> mT</td>
+                                </tr>
+                                <tr>
+                                    <th>Food</th>
+                                    <td><span id="food-carbon">0</span> mT</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="text/JavaScript" src="assets/js/vendor.bundle.js"></script>
+    <script type="text/JavaScript" src="assets/js/index.bundle.js"></script>
+</body>
+
+</html>
